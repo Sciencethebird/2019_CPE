@@ -7,3 +7,4 @@
 *.plist
 *.xcuserstate
 *.plist
+.DS_Store
