@@ -1,6 +1,7 @@
 import os
 import sys
 from shutil import copyfile
+import subprocess
 
 try:
     target_folder = sys.argv[1]
@@ -35,12 +36,9 @@ file_name = file_name + ".cpp"
 q = "\nsave file as " + file_name +"\ncontinue?(y/n)"
 a = input(q)
 
-file_name = os.path.join(target_folder, file_name)
-#print(file_name)
-
 if(a != "n"):
     try:
-        copyfile(source, file_name)
+        copyfile(source, os.path.join(target_folder, file_name))
         print("\nFile Successfully Transfered!!\n")
     except:
         print("\nFile Transfer Failed!!\n")
@@ -48,5 +46,11 @@ if(a != "n"):
 else:
     print("\nFile Transfer Cancelled\n")
     
+q = "\npush to github?(y/n)"
+a = input(q)
 
-
+if(a != "n"):
+    p1 = subprocess.Popen(["cd", "/Users/sciencethebird/Desktop/2019_CPE"], stdout=subprocess.PIPE)
+    p1 = subprocess.check_output(["git", "status"])
+    p1 = subprocess.check_output(["git", "status"])
+    print(p1.decode())
