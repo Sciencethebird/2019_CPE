@@ -16,11 +16,14 @@ target_folder = os.path.join(target_root, target_folder)
 try:
     file = open(source, "r")
     lines = file.readlines()
-    
+    print()
+    for idx, line in enumerate(lines):
+        print(str(idx) + "\t"+line[:-1])
+    head_idx = 0
 except:
     print("Source file NOT found !!")
-    
-head_idx = 0
+
+
 for char in lines[0]:
     
     if (char == "/" or char == " "):
@@ -33,19 +36,22 @@ file_name = file_name.replace(":", "_")
 file_name = file_name.replace("\n", "")
 file_name = file_name + ".cpp"
 
-q = "\nsave file as " + file_name +"\ncontinue?(y/n)"
+print("\nCPE_workbech --> "+target_folder+"\n")
+q = "\nSave file as <" + file_name +">?(y/n)"
 a = input(q)
 
 if(a != "n"):
     try:
         copyfile(source, os.path.join(target_folder, file_name))
-        print("\nFile Successfully Transfered!!\n")
+        print("\nSuccessfully copied to local repository.\n")
     except:
-        print("\nFile Transfer Failed!!\n")
+        print("\nFile copying failed!!\n")
 
 else:
-    print("\nFile Transfer Cancelled\n")
-    
+    print("\nFile copying cancelled\n")
+
+
+'''
 q = "\npush to github?(y/n)"
 a = input(q)
 
@@ -53,4 +59,5 @@ if(a != "n"):
     p1 = subprocess.Popen(["cd", "/Users/sciencethebird/Desktop/2019_CPE"], stdout=subprocess.PIPE)
     p1 = subprocess.check_output(["git", "status"])
     p1 = subprocess.check_output(["git", "status"])
-    print(p1.decode())
+    print(p1.decode()s)
+'''
