@@ -32,16 +32,21 @@ file_name = file_name.replace(":", "_")
 file_name = file_name.replace("\n", "")
 file_name = file_name + ".cpp"
 
+q = "\nsave file as " + file_name +"\ncontinue?(y/n)"
+a = input(q)
+
 file_name = os.path.join(target_folder, file_name)
-print(file_name)
+#print(file_name)
 
-try:
-    copyfile(source, file_name)
-    print("\nSuccessfully Transfered!!\n")
-except:
-    print("\nFile Transfer Failed!!\n")
+if(a != "n"):
+    try:
+        copyfile(source, file_name)
+        print("\nFile Successfully Transfered!!\n")
+    except:
+        print("\nFile Transfer Failed!!\n")
 
-    
+else:
+    print("\nFile Transfer Cancelled\n")
     
 
 
