@@ -8,7 +8,7 @@ UVA
 
 GeeksforGeeks
 ---
-- [Recursion](https://www.geeksforgeeks.org/recursion-practice-problems-solutions/)
+- [Recursion](https://hackmd.io/@I6y340YLTQCHk6AephuyNA/S1Xzzi-zU)
 
 LeetCode 
 ---
