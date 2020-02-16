@@ -1,17 +1,10 @@
 //  10507:Carmichael Numbers
 
 #include <iostream>
-#include <iomanip>
-#include <vector>
-#include <string>
 #include <stdlib.h>
-#include <deque>
-#include <math.h>
-#include <algorithm>
-#include <fstream>
+ 
 using namespace std;
-
-int calculated[65000], is_multiple[65000] = {true, true, false};
+bool is_multiple[65000] = {true, true, false};
 long long num;
 long long mod(int a, int power){
     if(power == 1) return a;
@@ -25,31 +18,28 @@ long long mod(int a, int power){
 }
 
 int main(int argc, const char * argv[]) {
-    for(int i = 2; i < 65000; i++){
+  
+    for(long long i = 2; i < 65000; i++){
         if(!is_multiple[i]){
-            for(int j = i+i; j< 65000; j+=i){
+            for(long long j = i*i; j< 65000; j+=i){
                 is_multiple[j] = true;
             }
         }
     }
-    while(cin >> num){
-        if(!num) break;
-        bool divisable = false, pass = true;
+    while( scanf("%lld", &num) != EOF && num != 0 ){
+        bool  pass = true;
         if(is_multiple[num]){
-            for(int a = 2; a< num; a++){
-                if(!divisable && num%a==0) divisable = 1;
-            
-                long long result = mod(a, num);
-                if(result != a) {
+            for(long long a = 2; a< num; ++a){
+                if(mod(a, num) != a) {
                     pass = false;
                     break;
                 }
             }
         }
-        if(divisable && pass)
-            cout << "The number " <<num<< " is a Carmichael number." << endl;
+        if(pass && is_multiple[num])
+            printf("The number %lld is a Carmichael number.\n", num);
         else
-            cout << num << " is normal." << endl;
+            printf("%lld is normal.\n", num);
     }
     return 0;
 }
