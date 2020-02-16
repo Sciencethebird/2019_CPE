@@ -1,4 +1,4 @@
-//  10506: Bicoloring
+//  10506:Bicoloring
 
 #include <iostream>
 #include <iomanip>
