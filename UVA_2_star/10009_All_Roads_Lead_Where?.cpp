@@ -1,4 +1,4 @@
-//  10009:All Roads Lead Where
+//  10009:All Roads Lead Where?
 
 #include <iostream>
 #include <stdlib.h>
@@ -63,6 +63,7 @@ int main(int argc, const char * argv[]) {
             connection[c2-'A'][c1-'A'] = true;
         }
         
+        // 建圖
         dfs('R' - 'A');
         if(k) cout << endl;
         for(int i = 0; i< n; i++){
@@ -86,13 +87,12 @@ int main(int argc, const char * argv[]) {
                 }else break;
         
             }
-            //cout << "f" << endl;
+            // 剪掉重複路徑
             t2 = t2.substr(0, i2+1);
             t2 = string(t2.rbegin(), t2.rend());
             cout << t1.substr(0, i1+1) <<c1<<t2 << endl;
         }
     }
-
     return 0;
 }
  
