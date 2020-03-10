@@ -1,4 +1,4 @@
-// A. Two Regular Polygons
+// B. Bogosort
 
 
 #include <iostream>
