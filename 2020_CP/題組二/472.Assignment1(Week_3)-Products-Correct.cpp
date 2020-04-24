@@ -84,6 +84,12 @@ int main(int argc, const char * argv[]) {
 }
 
 // WA case:
+// 7
+// No
+// cuz not seperable
+
+
+// Spectial case: not actually wa, the judge didn't know it
 // 1 1 3 1 1 3 3 3 9
 // 4 4 6 4 4 6 6 6 9
 // 1 1 1 3
