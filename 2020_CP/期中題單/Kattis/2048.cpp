@@ -1,4 +1,4 @@
-// Erase Securely
+// 2048
 #include <iostream>
 #include <stdlib.h>
 #include <stdio.h>
