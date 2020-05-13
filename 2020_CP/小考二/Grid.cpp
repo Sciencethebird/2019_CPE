@@ -50,6 +50,7 @@ void solve(vector<vector<int> > &mp, int m, int n){
         }cout << endl;
     }*/
 }
+
 int main(int argc, const char * argv[]) {
     int m, n;
     cin >> m >> n;
