@@ -13,54 +13,32 @@
 #include <queue>
 #include <unordered_map>
 typedef long long ll;
-typedef unsigned long long ull;
 using namespace std;
 
-
-
-bool found;
-int inf = 1<<29;
-//pair<int, int> moves[4] = {{3, 0}, {-2, 3}, {2, -1}, {0, -2}};
-//map<pair<int, int>,ll> dis;
-string s1, s2;
-vector<int> D;
-ull goal, ans;
-ull comb[4] = {4, 4};
-void sol(ull pos, ull sum){
-    if(pos == goal){
-        cout <<sum << endl;
-    }
-    if(pos+3<=goal){
-        
-    }if (pos+2<=goal) {
-        kkk;
-    }
-}
 int main(int argc, const char * argv[]) {
     
-    int len;
-    scanf("%d", &len);
-    ans = 1;
-    cin >> s1 >> s2;
-    vector<int> diff(len+1);
-    diff[0] = 0;
-    diff[1] = (s1[0]!=s2[0]);
-    for(int i = 2; i<= len; i++){
-        diff[i] = (s1[i-1]!=s2[i-1])+diff[i-1];
+    ll x, bd = 1000000007;
+    scanf("%lld", &x);
+    ll t1 = 1, t2 = 4;
+    if(x == 1) {
+        printf("%lld\n", t1);
+        return 0;
     }
-    D = diff;
-    
-    if(ans){
-        cout << "True" << endl;
-    }else{
-        cout << "False" << endl;
+    if(x == 2){
+        printf("%lld\n", t2);
+        return 0;
     }
-    
+        
+    for(int i = 2; i< x; i++){
+        ll temp = t2;
+        //t2 = t1;
+        t2 = ((4*t1)+(2*t2))%bd;
+        t1 = temp;
+    }
+    printf("%lld\n", t2);
     return 0;
 }
 
-/*
-abcefg
-xbxefg
- */
+
+
 
